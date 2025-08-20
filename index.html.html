@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Linktree Puskesmas Krembangan Selatan</title>
+  <style>
+    body {
+      background-color: #aacfd9;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      background: #d6f4ff;
+      border-radius: 20px;
+      padding: 30px 0 30px 0;
+      margin: 40px 0;
+      width: 95vw;
+      max-width: 420px;
+      box-shadow: 0 0 24px #92bcca;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 30px;
+      color: #14599a;
+      letter-spacing: 1px;
+    }
+    .linktree-btn {
+      display: block;
+      width: 80%;
+      margin: 15px auto;
+      padding: 18px;
+      background: #fff;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      color: #135588;
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      box-shadow: 0 3px 8px rgba(180,200,230,0.12);
+      transition: transform 0.08s, background 0.3s;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+    .linktree-btn:hover {
+      background: #c7e5fa;
+      transform: scale(1.04);
+    }
+    .linktree-btn:active {
+      transform: scale(0.98);
+    }
+    
+    @media (max-width: 480px) {
+      .container {
+        max-width: 98vw;
+        padding: 20px 0 20px 0;
+      } 
+      .linktree-btn {
+        width: 95%;
+        font-size: 1rem;
+        padding: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>PUSKESMAS KREMBANGAN SELATAN</h2>
+    
+    <a class="linktree-btn" 
+       href="https://ehealth.surabaya.go.id/pendaftaranv2/?fbclid=PAQ0xDSwMSKuJleHRuA2FlbQIxMQABp-xpMxPsuNodNi2g9r0kr2olnyAAVSr_evZufwqn2lzCY3cyZD0ZOVhGoOnF_aem_YxxATgPVxMhBGW0Nme5WFQ">
+       Pendaftaran Online Puskesmas
+    </a>
+    
+    <a class="linktree-btn" 
+       href="https://share.google/6UKnSA2IxnYxxUH5j">
+       Pengaduan Online
+    </a>
+    
+    <a class="linktree-btn" 
+       href="https://webskrining.bpjs-kesehatan.go.id/skrining">
+       Skrining BPJS Kesehatan
+    </a>
+    
+    <a class="linktree-btn" 
+       href="https://youtube.com/@promkeskremsel2023?si=FoktlC3IjCJDLe7t">
+       YouTube Puskesmas Krembangan Selatan
+    </a>
+    
+    <a class="linktree-btn" 
+       href="https://www.facebook.com/share/16qxZZWE23/">
+       Facebook Puskesmas Krembangan Selatan
+    </a>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const links = document.querySelectorAll('.linktree-btn');
+      
+      links.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const url = this.href;
+          
+          // Untuk VS Code/localhost, buka langsung dengan method yang berbeda
+          if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            // Method 1: Coba dengan about:blank terlebih dahulu
+            const newWindow = window.open('about:blank', '_blank');
+            if (newWindow) {
+              newWindow.location.href = url;
+            } else {
+              // Fallback: Redirect di tab yang sama
+              if (confirm('Popup diblokir. Buka link di tab ini?')) {
+                window.location.href = url;
+              }
+            }
+          } else {
+            // Untuk production, gunakan method normal
+            window.open(url, '_blank');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
